@@ -1,0 +1,109 @@
+/* Global Styling */
+html, body {margin:0px; padding: 0px;}
+
+nav {
+    background-color: #34495e;
+    height: 100px;
+        position: fixed;
+        width: 100vw;
+        top: 0;
+        z-index: 999
+	font-colour: white;
+}
+
+
+.story {
+    padding: 50px 50px;
+    max-width: 1200px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 80px;
+}
+
+.right {float: right !important;}
+/* Image zooms in and the overlaying colour appears */
+.parent {
+    width: 45%;
+    margin: 20px;
+    height: 300px;
+    border: 1px solid blue;
+    overflow: hidden;
+    position: relative;
+    float: left;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.child {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    -webkit-transition: all 1.5s;
+    -moz-transition: all 1.5s;
+    -o-transition: all 1.5s;
+    transition: all 1.5s;
+}
+
+/* Several different images */
+.myself {background-image: url(Images/Myself.jpg);}
+.charm{background-image: url(Images/charm.jpeg);}
+.mama {background-image: url(Images/Mama.jpeg);}
+.worry {background-image: url(Images/Worry.jpeg);}
+.mountain {background-image: url(Images/mountain.jpeg);}
+.prophet {background-image: url(Images/Prophet.jpeg);}
+.envelope {background-image: url(Images/Envelope.jpeg);}
+.fail {background-image: url(Images/Fail.jpeg);}
+.juju {background-image: url(Images/juju.jpeg); }
+.heart_attack {background-image: url(Images/Heart_attack.jpeg);}
+
+
+a {
+    display: none;
+    font-size: 25px;
+    color: #ffffff !important;
+    font-family: sans-serif;
+    text-align: center;
+    margin: auto;
+    position: absolute;
+    top: 150px;
+    left: 100px;
+    bottom: 100px;
+    right: 100px;
+    height: 220px;
+    cursor: pointer;
+}
+
+.parent:hover .child, .parent:focus .child {
+    -ms-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+.parent:hover .child:before, .parent:focus .child:before {
+    display: block;
+}
+
+.parent:hover a, .parent:focus a {
+    display: block;
+}
+
+.child:before {
+    content: "";
+    display: none;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(52,73,94,0.75);
+}
+
+/* Media Queries */
+@media screen and (max-width: 960px) {
+    .parent {width: 100%; margin: 20px 0px}
+        .story{padding: 20px 20px;}
+}
